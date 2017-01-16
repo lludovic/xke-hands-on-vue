@@ -60,6 +60,10 @@ module.exports = {
         loader: 'vue'
       },
       {
+        test: /\.s[a|c]ss$/,
+        loader: 'style!css!sass'
+      },
+      {
         test: /\.js$/,
         loader: 'babel',
         include: projectRoot,

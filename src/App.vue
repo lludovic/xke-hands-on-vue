@@ -2,7 +2,7 @@
   <div id="app">
     <!--<img src="./assets/logo.png">-->
     <!--<hello></hello>-->
-    <h1>Henry Poitier</h1>
+    <h1>Henry Poitier <span class="label label-warning">test</span></h1>
     <div>
       <router-link to="/books">Books</router-link>
       <router-link to="/basket">Basket</router-link>
@@ -25,17 +25,16 @@ export default {
     Hello, Books, Basket
   }
 }
+
 </script>
 
-<style scoped>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-
+<style scoped lang="scss">
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+  }
 </style>
