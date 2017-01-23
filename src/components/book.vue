@@ -1,8 +1,13 @@
 <template >
     <div class="book">
       <img :src="book.cover"  />
-      <h4 class="title">{{book.title}}</h4>
-      <h4 class="price">{{book.price}}</h4>
+      <div>
+      <h5 class="title" style="display:inline-block">{{book.title}}</h5>
+      <h5 class="price" style="display:inline-block">{{book.price}}</h5>
+      <button type="button" style="display:block" class="btn btn-success"
+        @click="addToBasket(book)">Add to Basket
+      </button>
+      </div>
     </div>
 </template>
 <style scoped>
@@ -15,7 +20,7 @@
   }
 
   img {
-    width: 200px;
+    width: 150px;
   }
   .title {
     color: blue;
@@ -26,15 +31,22 @@
   }
 </style>
 <script>
-  export default{
-    name: 'book',
-    props: ['book'],
-    data () {
-      return {
-        msg: 'hello vue'
-      }
-    },
-    components: {
+import BasketService from '../service/basket-service'
+export default{
+  name: 'book',
+  props: ['book'],
+  data () {
+    return {
+      msg: 'hello vue'
     }
+  },
+  methods: {
+    addToBasket: function (book) {
+      console.log(book)
+      BasketService.addBook(book)
+    }
+  },
+  components: {
   }
+}
 </script>
