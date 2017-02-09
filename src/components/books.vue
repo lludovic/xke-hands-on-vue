@@ -1,17 +1,19 @@
+<style scoped>
+ .container {
+    display: flex; /* or inline-flex */
+    flex-flow: row wrap;
+    justify-content: flex-start;
+  }
+</style>
+
 <template>
   <div class="container">
     <book  v-for="item in books" :book="item"></book>
   </div>
 </template>
-<style scoped>
- .container {
-  display: flex; /* or inline-flex */
-  flex-flow: row wrap;
-  justify-content: flex-start;
-  }
-</style>
+
 <script>
-  import {RxHttpRequest} from 'rx-http-request'
+  import BookService from '../service/book-service'
   import Book from './book'
 
   export default{
@@ -23,9 +25,8 @@
       }
     },
     created: function () {
-      const defaultHttp = RxHttpRequest.defaults({withCredentials: false, json: true})
-      defaultHttp.get('http://henri-potier.xebia.fr/books')
-      .subscribe(data => { this.books = data.body })
+      BookService.getBooks()
+      .subscribe(books => { this.books = books })
     },
     components: {
       Book

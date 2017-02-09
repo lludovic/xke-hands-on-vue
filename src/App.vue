@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <!--<img src="./assets/logo.png">-->
-    <!--<hello></hello>-->
     <h1>Henry Poitier</h1>
     <div>
       <router-link to="/books">Books</router-link>
@@ -15,14 +14,13 @@
 </template>
 
 <script>
-import Hello from './components/Hello'
 import Books from './components/books'
 import Basket from './components/basket'
 
 export default {
   name: 'app',
   components: {
-    Hello, Books, Basket
+    Books, Basket
   }
 }
 
