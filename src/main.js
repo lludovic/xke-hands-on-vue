@@ -5,12 +5,16 @@ import VueRouter from 'vue-router'
 import App from './App'
 import Basket from './components/basket.vue'
 import Books from './components/books.vue'
+import Order from './components/order.vue'
+import Checkout from './components/checkout.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   { path: '/books', component: Books },
-  { path: '/basket', component: Basket }
+  { path: '/basket', component: Basket },
+  { path: '/order', component: Order },
+  { path: '/checkout', component: Checkout }
 ]
 
 const router = new VueRouter({
