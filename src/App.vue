@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <!--<img src="./assets/logo.png">-->
+    <img src="./assets/logo.png">
     <h1>Henry Poitier</h1>
     <div>
       <router-link to="/books">Books</router-link>
@@ -23,10 +23,9 @@ export default {
     Books, Basket
   }
 }
-
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -34,5 +33,12 @@ export default {
     text-align: center;
     color: #2c3e50;
     margin-top: 60px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn-success {
+    background-color: #41b883;
   }
 </style>

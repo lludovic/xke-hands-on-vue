@@ -1,5 +1,5 @@
 <style scoped>
- .container {
+ .panel-body {
     display: flex; /* or inline-flex */
     flex-flow: row wrap;
     justify-content: flex-start;
@@ -7,8 +7,13 @@
 </style>
 
 <template>
-  <div class="container">
-    <book  v-for="item in books" :book="item"></book>
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h2>Books</h2>
+    </div>
+    <div class="panel-body">
+      <book  v-for="item in books" :book="item"></book>
+    </div>
   </div>
 </template>
 
@@ -26,7 +31,7 @@
     },
     created: function () {
       BookService.getBooks()
-      .subscribe(books => { this.books = books })
+      .then(books => { this.books = books })
     },
     components: {
       Book

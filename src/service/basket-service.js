@@ -1,10 +1,4 @@
-import BookService from './book-service'
-
 let commandLines = []
-let commandTotal = {
-  total: 0,
-  oldtotal: 0
-}
 
 const load = () => {
   const localCommandLines = window.localStorage.getItem('commandLines')
@@ -16,7 +10,6 @@ const load = () => {
 }
 
 const afterChanged = () => {
-  performTotal()
   persist()
 }
 
@@ -48,23 +41,10 @@ const removeBook = item => {
 
 const getItems = () => commandLines
 
-const performTotal = () => {
-  const total = commandLines
+const getTotal = () =>
+  commandLines
     .map(item => item.price * item.quantity)
     .reduce((ac, v) => ac + v, 0)
-
-  return BookService.getOffers(commandLines)
-    .map(offer => {
-      commandTotal = {
-        total: offer(total),
-        oldtotal: total
-      }
-
-      return commandTotal
-    })
-}
-
-const getTotal = () => commandTotal
 
 load()
 
@@ -73,6 +53,5 @@ export default {
   removeBook,
   getItems,
   getTotal,
-  performTotal,
   persist
 }

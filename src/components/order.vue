@@ -1,9 +1,7 @@
 <style scoped>
-    body{
-        background-color:#ff0000;
+    .btn-success {
+      background-color: #41b883;
     }
-
-
 </style>
 
 <template>
@@ -47,15 +45,10 @@
         }
       }
     },
-    created () {
-    },
     methods: {
       order () {
         this.$router.push({ path: '/checkout', query: this.info })
       }
-    },
-    components: {
     }
   }
-
 </script>
