@@ -11,19 +11,19 @@
 
     <form action="toto">
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Name" v-model="info.name">
+        <input type="text" class="form-control" placeholder="Name" v-model.trim="info.name" />
       </div>
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Email" v-model="info.email">
+        <input type="text" class="form-control" placeholder="Email" v-model="info.email" />
       </div>
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Num" v-model="info.addressNum">
+        <input type="number" class="form-control" placeholder="Num" v-model="info.addressNum" />
       </div>
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Street" v-model="info.addressStreet">
+        <input type="text" class="form-control" placeholder="Street" v-model="info.addressStreet" />
       </div>
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="City" v-model="info.addressCity">
+        <input type="text" class="form-control" placeholder="City" v-model="info.addressCity" />
       </div>
 
       <button @click="order()" type="button">Go</button>
@@ -47,6 +47,7 @@
     },
     methods: {
       order () {
+        console.log(this.info)
         this.$router.push({ path: '/checkout', query: this.info })
       }
     }

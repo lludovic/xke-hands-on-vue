@@ -25,7 +25,6 @@
     name: 'books',
     data: function () {
       return {
-        msg: 'hello vue 2',
         books: []
       }
     },

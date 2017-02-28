@@ -59,7 +59,6 @@
     name: 'basket',
     data () {
       return {
-        msg: 'hello vue',
         books: BasketService.getItems(),
         total: BasketService.getTotal()
       }
